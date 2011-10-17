@@ -1,0 +1,20 @@
+[user]
+	name = Tagaki Aki
+	email = a-tagaki@esm.co.jp
+[color]
+	ui = true
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	b = branch
+        dc = diff --cached
+        staged = diff --cached --ignore-all-spac
+        l = log --decoratee
+        d = diff
+        a = add
+        au = add -u
+        pr = pull --rebase
+[core]
+	excludesfile = /Users/akiinyo/.gitignore
+[push] default = tracking
