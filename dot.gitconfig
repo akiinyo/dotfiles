@@ -7,11 +7,11 @@
 	b = branch
         dc = diff --cached
         staged = diff --cached --ignore-all-spac
-        l = log --decoratee
+        l = log --oneline --decorate --graph
         d = diff
         a = add
         au = add -u
         pr = pull --rebase
 [core]
-	excludesfile = /Users/akiinyo/.gitignore
+	excludesfile = /Users/akiinyo/.gitignore_global
 [push] default = tracking
