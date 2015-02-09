@@ -15,12 +15,8 @@ EDITOR=`which vim`
 PAGER=`which lv`
 export PATH SHELL LANG LC_CTYPE LC_MESSAGES EDITOR
 export PATH=/usr/local/bin:$PATH
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH
 export WORDCHARS="*?_-.[]~=&;#$%^(){}<>"
-#export PATH=/Users/akiinyo/.rvm/gems/ruby-2.0.0-p0/bin:$PATH
-#export PATH=/Library/PostgreSQL/9.1/bin:$PATH
-
-# PROMPT='%n %F{blue}[%~]%f$ '
 
 alias vv="vim ~/.vimrc"
 alias sc="screen"
@@ -37,7 +33,7 @@ precmd () {
   psvar[1]=$vcs_info_msg_0_
 }
 PROMPT=$'%2F%n@%m%f %3F%~%f%1v\n%T [%(?.%?.%F{red}%?%f)]%(!.%F{red}#.$)%f%b '
-#PROMPT="%(?!%F{yellow}☀%f !%F{cyan}☂ %f) < "
+
 bindkey -e
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
@@ -51,7 +47,6 @@ if is-at-least 4.3.10; then
   zstyle ':vcs_info:git:*' actionformats '(%s)-[%b|%a] %c%u'
 fi
 
-# v このへんだいぶおまじない
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:messages' format '%d'
@@ -64,13 +59,11 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 setopt auto_list auto_menu _auto_name_dirs auto_name_dirs always_last_prompt
 setopt auto_param_keys auto_pushd auto_param_slash auto_remove_slash auto_pushd
-#setopt brace_ccl chase_dots extended_glob hash_cmds hash_dirs
 setopt hist_expire_dups_first hist_ignore_all_dups hist_reduce_blanks
 setopt hist_ignore_space hist_save_no_dups magic_equal_subst inc_append_history
 setopt pushd_ignore_dups printeightbit
 
 unsetopt allexport bgnice correct_all flowcontrol promptcr
-# ^ おまじない
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
